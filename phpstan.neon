@@ -1,0 +1,16 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - vendor/phpstan/phpstan-webmozart-assert/extension.neon
+parameters:
+    checkDynamicProperties: true
+    checkTooWideReturnTypesInProtectedAndPublicMethods: true
+    level: 8
+    paths:
+        - app/
+        - database/
+        - routes/
+    rememberPossiblyImpureFunctionValues: false
+    reportAlwaysTrueInLastCondition: true
+    strictRules:
+        dynamicCallOnStaticMethod: false
