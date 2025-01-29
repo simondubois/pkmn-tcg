@@ -10,8 +10,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "kriswallsmith/buzz": "^1.3",
         "laravel/framework": "^11.31",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "nyholm/psr7": "^1.8",
+        "symfony/cache": "^7.2",
+        "tcgdex/sdk": "^2.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -59,6 +63,10 @@
         ],
         "phpstan": [
             "composer exec phpstan analyse -- -c phpstan.neon"
+        ],
+        "rebuild-db": [
+            "php artisan migrate:fresh",
+            "php artisan app:import-all"
         ]
     },
     "extra": {
