@@ -6,6 +6,7 @@ use App\Enums\Category;
 use App\Enums\Rarity;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Card extends Model
 {
@@ -29,6 +30,14 @@ class Card extends Model
             'category' => Category::class,
             'rarity' => Rarity::class,
         ];
+    }
+
+    /**
+     * @return HasMany<Discovery, $this>
+     */
+    public function discoveries(): HasMany
+    {
+        return $this->hasMany(Discovery::class);
     }
 
     /**
